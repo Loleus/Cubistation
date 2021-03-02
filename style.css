@@ -8,11 +8,11 @@ body { overflow: hidden; background-image: radial-gradient(circle, #834d22 0%, #
 
 .root .port { position: relative; width: 400px; height: 400px; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; margin: auto; }
 
-.root .port.far { -webkit-transform: translateZ(-200px); transform: translateZ(-300px); }
+.root .port.far { -webkit-transform: translateZ(-200px); transform: translateZ(-400px); }
 
-.root .port.close { -webkit-transform: translateZ(200px); transform: translateZ(100px); }
+.root .port.close { -webkit-transform: translateZ(200px); transform: translateZ(0px); }
 
-.root .port.normal { -webkit-transform: translateZ(0px); transform: translateZ(-100px); }
+.root .port.normal { -webkit-transform: translateZ(0px); transform: translateZ(-200px); }
 
 .root .port .layers_container { width: 100%; height: 100%; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-animation: spinXYZ 15s 10s linear infinite; animation: spinXYZ 15s 10s linear infinite; position: relative; }
 
