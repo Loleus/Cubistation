@@ -127,8 +127,7 @@ body {
             }
         }
     
-        &__back,
-        &__front {
+        &__back, &__front {
             .cube {
                 &--00, &--02, &--06, &--08 {
                     background: rgba(34, 93, 180, 0.486);
@@ -150,7 +149,7 @@ body {
             animation: spinCenter 7s 5s linear infinite;
             border: 2px solid white;
             border-radius: 50%;
-
+            
             .cube {
                 .X, .Y {
                     background: rgba(238, 235, 83, 0.699);
@@ -177,12 +176,14 @@ body {
     }
 }
 
+
 .spinXYZ {
     animation: spinXYZ 15s 10s linear infinite;
 }
 
 @keyframes spinXYZ {
     100% {
+        -webkit-transform: rotate3d(1, -2, -1, 1turn);
         transform: rotate3d(1, -2, -1, 1turn);
     }
 }
@@ -190,6 +191,18 @@ body {
 @keyframes spinCenter {
     100% {
         transform: translateZ(0px) rotateZ(360deg);
+    }
+}
+
+@keyframes spinFront {
+    100% {
+        transform: translateZ(450px) rotateZ(360deg);
+    }
+}
+
+@keyframes spinBack {
+    100% {
+        transform: translateZ(-450px) rotateZ(360deg);
     }
 }
 
