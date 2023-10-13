@@ -178,7 +178,7 @@ body {
 
 .layer__front .cube,
 .layer__back .cube {
-    background: rgba(34, 93, 180, 0.486);
+    background: none;
 }
 
 .layer__front .cube--04,
@@ -195,7 +195,7 @@ body {
 .layer__back .cube--06,
 .layer__back .cube--08 {
     animation: spinCenterCenter 3s 5s ease-out infinite;
-    border-radius: 1vw;
+    background: rgba(34, 93, 180, 0.486);
 }
 
 .layer__back {
@@ -217,7 +217,7 @@ body {
 .layer__center .cube .X,
 .layer__center .cube .Y {
     background: rgba(238, 235, 83, 0.699);
-    border-radius: 1vw;
+
 }
 
 .layer__center .cube--04 {
@@ -232,7 +232,7 @@ body {
     background: rgba(66, 199, 25, 0.192);
     -webkit-animation: pulse 1s 3s ease-in-out infinite alternate;
     animation: pulse 1s 3s ease-in-out infinite alternate;
-    border-radius: 1vw;
+
 }
 
 .layer__center .cube--00,
@@ -259,7 +259,7 @@ body {
     border-radius: 50%;
     background: rgba(66, 199, 25, 0.486);
     visibility: visible;
-    border-radius: 1vw;
+
     
 }
 
