@@ -96,22 +96,13 @@ body {
 .layer__back .cube--06, .layer__back .cube--07, .layer__back .cube--08, .layer__center .cube--06, .layer__center .cube--07, .layer__center .cube--08, .layer__front .cube--06, .layer__front .cube--07, .layer__front .cube--08 {
   top: var(--thirdRow);
 }
-.layer__back .cube, .layer__front .cube {
-  background: none;
-}
-
-.layer__front .cube--00,
-.layer__front .cube--02,
-.layer__front .cube--06,
-.layer__front .cube--08,
-.layer__back .cube--00,
-.layer__back .cube--02,
-.layer__back .cube--06,
-.layer__back .cube--08 {
-  animation: spinCenterCenter 3s 5s ease-out infinite;
+.layer__back .cube--00, .layer__back .cube--02, .layer__back .cube--06, .layer__back .cube--08, .layer__front .cube--00, .layer__front .cube--02, .layer__front .cube--06, .layer__front .cube--08 {
   background: rgba(34, 93, 180, 0.486);
 }
-
+.layer__front {
+  transform: translateZ(150px);
+  animation: spinFront 10s 2s ease-in infinite alternate;
+}
 .layer__back {
   transform: translateZ(-150px);
   animation: spinBack 10s 1s ease-in infinite alternate;
@@ -165,11 +156,6 @@ body {
   border-radius: 50%;
   background: rgba(66, 199, 25, 0.486);
   visibility: visible;
-}
-
-.layer__front {
-  transform: translateZ(150px);
-  animation: spinFront 10s 2s ease-in infinite alternate;
 }
 
 .Z,
