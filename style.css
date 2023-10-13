@@ -229,8 +229,7 @@ body {
 .layer__center .cube--04 .Y {
     visibility: visible;
     border-radius: 50%;
-    background: rgba(66, 199, 25, 0.192);
-    -webkit-animation: pulse 1s 3s ease-in-out infinite alternate;
+    background: conic-gradient(from 90deg at 50% 50%, #474daa 0%, #171e51 51%, #474daa 100%);
     animation: pulse 1s 3s ease-in-out infinite alternate;
 
 }
@@ -357,14 +356,10 @@ body {
     }
 }
 
-@-webkit-keyframes pulse {
-    100% {
-        background: rgba(212, 15, 15, 0.767);
-    }
-}
+
 
 @keyframes pulse {
     100% {
-        background: rgba(212, 15, 15, 0.767);
+        background: conic-gradient(from 90deg at 50% 50%, #aa4747 0%, #511717 51%, #aa4747 100%);
     }
 }
