@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cube: 10vw;
+  --cubeMinus: -10vw;
+  --doubleCubeMinus: -20vw;
+  --secondRow: 15vw;
+  --thirdRow: 30vw;
+  --portSize: 40vw;
+}
+@media screen and (orientation: portrait) {
+  :root {
+    --cube: 10vh;
+    --cubeMinus: -10vh;
+    --secondRow: 15vh;
+    --thirdRow: 30vh;
+    --doubleCubeMinus: -20vh;
+    --portSize: 40vh;
+  }
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -19,24 +38,8 @@ body {
 .root {
   width: 100%;
   height: 100%;
-  --cube: 10vw;
-  --cubeMinus: -10vw;
-  --doubleCubeMinus: -20vw;
-  --secondRow: 15vw;
-  --thirdRow: 30vw;
-  --portSize: 40vw;
   display: flex;
   perspective: 55rem;
-}
-@media screen and (orientation: landscape) {
-  .root {
-    --cube: 10vh;
-    --cubeMinus: -10vh;
-    --secondRow: 15vh;
-    --thirdRow: 30vh;
-    --doubleCubeMinus: -20vh;
-    --portSize: 40vh;
-  }
 }
 
 .port {
@@ -45,24 +48,16 @@ body {
   width: var(--portSize);
   height: var(--portSize);
   margin: auto;
-}
-.port .far {
-  transform: translateZ(-300px);
-}
-.port .normal {
   transform: translateZ(-100px);
 }
-.port .close {
-  transform: translateZ(100px);
-}
-
-.layers {
+.port .layers {
   position: relative;
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
+  animation: spinXYZ 15s 10s linear infinite;
 }
-.layers .layer {
+.port .layers .layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +65,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.layers .layer__back .cube, .layers .layer__center .cube, .layers .layer__front .cube {
+.port .layers .layer__back .cube, .port .layers .layer__center .cube, .port .layers .layer__front .cube {
   position: absolute;
   top: 0;
   left: 0;
@@ -79,79 +74,77 @@ body {
   height: var(--cube);
   background: none;
 }
-.layers .layer__back .cube--00, .layers .layer__back .cube--03, .layers .layer__back .cube--06, .layers .layer__center .cube--00, .layers .layer__center .cube--03, .layers .layer__center .cube--06, .layers .layer__front .cube--00, .layers .layer__front .cube--03, .layers .layer__front .cube--06 {
+.port .layers .layer__back .cube--00, .port .layers .layer__back .cube--03, .port .layers .layer__back .cube--06, .port .layers .layer__center .cube--00, .port .layers .layer__center .cube--03, .port .layers .layer__center .cube--06, .port .layers .layer__front .cube--00, .port .layers .layer__front .cube--03, .port .layers .layer__front .cube--06 {
   left: 0;
 }
-.layers .layer__back .cube--01, .layers .layer__back .cube--04, .layers .layer__back .cube--07, .layers .layer__center .cube--01, .layers .layer__center .cube--04, .layers .layer__center .cube--07, .layers .layer__front .cube--01, .layers .layer__front .cube--04, .layers .layer__front .cube--07 {
+.port .layers .layer__back .cube--01, .port .layers .layer__back .cube--04, .port .layers .layer__back .cube--07, .port .layers .layer__center .cube--01, .port .layers .layer__center .cube--04, .port .layers .layer__center .cube--07, .port .layers .layer__front .cube--01, .port .layers .layer__front .cube--04, .port .layers .layer__front .cube--07 {
   left: var(--secondRow);
 }
-.layers .layer__back .cube--02, .layers .layer__back .cube--05, .layers .layer__back .cube--08, .layers .layer__center .cube--02, .layers .layer__center .cube--05, .layers .layer__center .cube--08, .layers .layer__front .cube--02, .layers .layer__front .cube--05, .layers .layer__front .cube--08 {
+.port .layers .layer__back .cube--02, .port .layers .layer__back .cube--05, .port .layers .layer__back .cube--08, .port .layers .layer__center .cube--02, .port .layers .layer__center .cube--05, .port .layers .layer__center .cube--08, .port .layers .layer__front .cube--02, .port .layers .layer__front .cube--05, .port .layers .layer__front .cube--08 {
   left: var(--thirdRow);
 }
-.layers .layer__back .cube--00, .layers .layer__back .cube--01, .layers .layer__back .cube--02, .layers .layer__center .cube--00, .layers .layer__center .cube--01, .layers .layer__center .cube--02, .layers .layer__front .cube--00, .layers .layer__front .cube--01, .layers .layer__front .cube--02 {
+.port .layers .layer__back .cube--00, .port .layers .layer__back .cube--01, .port .layers .layer__back .cube--02, .port .layers .layer__center .cube--00, .port .layers .layer__center .cube--01, .port .layers .layer__center .cube--02, .port .layers .layer__front .cube--00, .port .layers .layer__front .cube--01, .port .layers .layer__front .cube--02 {
   top: 0;
 }
-.layers .layer__back .cube--03, .layers .layer__back .cube--04, .layers .layer__back .cube--05, .layers .layer__center .cube--03, .layers .layer__center .cube--04, .layers .layer__center .cube--05, .layers .layer__front .cube--03, .layers .layer__front .cube--04, .layers .layer__front .cube--05 {
+.port .layers .layer__back .cube--03, .port .layers .layer__back .cube--04, .port .layers .layer__back .cube--05, .port .layers .layer__center .cube--03, .port .layers .layer__center .cube--04, .port .layers .layer__center .cube--05, .port .layers .layer__front .cube--03, .port .layers .layer__front .cube--04, .port .layers .layer__front .cube--05 {
   top: var(--secondRow);
 }
-.layers .layer__back .cube--06, .layers .layer__back .cube--07, .layers .layer__back .cube--08, .layers .layer__center .cube--06, .layers .layer__center .cube--07, .layers .layer__center .cube--08, .layers .layer__front .cube--06, .layers .layer__front .cube--07, .layers .layer__front .cube--08 {
+.port .layers .layer__back .cube--06, .port .layers .layer__back .cube--07, .port .layers .layer__back .cube--08, .port .layers .layer__center .cube--06, .port .layers .layer__center .cube--07, .port .layers .layer__center .cube--08, .port .layers .layer__front .cube--06, .port .layers .layer__front .cube--07, .port .layers .layer__front .cube--08 {
   top: var(--thirdRow);
 }
-.layers .layer__back .cube .X, .layers .layer__back .cube .Y, .layers .layer__back .cube .Z, .layers .layer__center .cube .X, .layers .layer__center .cube .Y, .layers .layer__center .cube .Z, .layers .layer__front .cube .X, .layers .layer__front .cube .Y, .layers .layer__front .cube .Z {
+.port .layers .layer__back .cube .X, .port .layers .layer__back .cube .Y, .port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .X, .port .layers .layer__center .cube .Y, .port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .X, .port .layers .layer__front .cube .Y, .port .layers .layer__front .cube .Z {
   width: var(--cube);
   height: var(--cube);
   background: inherit;
   backface-visibility: visible;
 }
-.layers .layer__back .cube .Z, .layers .layer__center .cube .Z, .layers .layer__front .cube .Z {
+.port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .Z {
   transform: rotateZ(90deg);
 }
-.layers .layer__back .cube .X, .layers .layer__center .cube .X, .layers .layer__front .cube .X {
+.port .layers .layer__back .cube .X, .port .layers .layer__center .cube .X, .port .layers .layer__front .cube .X {
   transform: translateY(var(--cubeMinus)) rotateX(90deg);
 }
-.layers .layer__back .cube .Y, .layers .layer__center .cube .Y, .layers .layer__front .cube .Y {
+.port .layers .layer__back .cube .Y, .port .layers .layer__center .cube .Y, .port .layers .layer__front .cube .Y {
   transform: translateY(var(--doubleCubeMinus)) rotateY(90deg);
 }
-.layers .layer__back .cube--00, .layers .layer__back .cube--02, .layers .layer__back .cube--06, .layers .layer__back .cube--08, .layers .layer__front .cube--00, .layers .layer__front .cube--02, .layers .layer__front .cube--06, .layers .layer__front .cube--08 {
-  background: rgba(34, 93, 180, 0.486);
+.port .layers .layer__back .cube, .port .layers .layer__front .cube {
+  border: 5px outset rgba(29, 20, 91, 0.486);
 }
-.layers .layer__front {
+.port .layers .layer__back .cube--00, .port .layers .layer__back .cube--02, .port .layers .layer__back .cube--06, .port .layers .layer__back .cube--08, .port .layers .layer__front .cube--00, .port .layers .layer__front .cube--02, .port .layers .layer__front .cube--06, .port .layers .layer__front .cube--08 {
+  background: rgba(1, 63, 155, 0.571);
+}
+.port .layers .layer__front {
   transform: translateZ(150px);
   animation: spinFront 10s 2s ease-in infinite alternate;
 }
-.layers .layer__back {
+.port .layers .layer__back {
   transform: translateZ(-150px);
   animation: spinBack 10s 1s ease-in infinite alternate;
 }
-.layers .layer__center {
+.port .layers .layer__center {
   transform: translateZ(0px);
   animation: spinCenter 7s 5s linear infinite;
-  border: 2px solid white;
+  border: 2px solid rgba(39, 29, 151, 0.586);
   border-radius: 50%;
 }
-.layers .layer__center .cube .X, .layers .layer__center .cube .Y {
-  background: rgba(238, 235, 83, 0.699);
+.port .layers .layer__center .cube .X, .port .layers .layer__center .cube .Y {
+  background: rgba(39, 29, 151, 0.586);
 }
-.layers .layer__center .cube--04 .X, .layers .layer__center .cube--04 .Y, .layers .layer__center .cube--04 .Z {
+.port .layers .layer__center .cube--04 .X, .port .layers .layer__center .cube--04 .Y, .port .layers .layer__center .cube--04 .Z {
   visibility: visible;
   border-radius: 50%;
   background: conic-gradient(from 90deg at 50% 50%, #474daa 0%, #171e51 51%, #474daa 100%);
   animation: pulse 1s 3s ease-in-out infinite alternate;
 }
-.layers .layer__center .cube--00, .layers .layer__center .cube--02, .layers .layer__center .cube--06, .layers .layer__center .cube--08 {
+.port .layers .layer__center .cube--00, .port .layers .layer__center .cube--02, .port .layers .layer__center .cube--06, .port .layers .layer__center .cube--08 {
   animation: spinCenter 3s 2s ease-out infinite;
   background: none;
 }
-.layers .layer__center .cube--00 .X, .layers .layer__center .cube--00 .Y, .layers .layer__center .cube--00 .Z, .layers .layer__center .cube--02 .X, .layers .layer__center .cube--02 .Y, .layers .layer__center .cube--02 .Z, .layers .layer__center .cube--06 .X, .layers .layer__center .cube--06 .Y, .layers .layer__center .cube--06 .Z, .layers .layer__center .cube--08 .X, .layers .layer__center .cube--08 .Y, .layers .layer__center .cube--08 .Z {
+.port .layers .layer__center .cube--00 .X, .port .layers .layer__center .cube--00 .Y, .port .layers .layer__center .cube--00 .Z, .port .layers .layer__center .cube--02 .X, .port .layers .layer__center .cube--02 .Y, .port .layers .layer__center .cube--02 .Z, .port .layers .layer__center .cube--06 .X, .port .layers .layer__center .cube--06 .Y, .port .layers .layer__center .cube--06 .Z, .port .layers .layer__center .cube--08 .X, .port .layers .layer__center .cube--08 .Y, .port .layers .layer__center .cube--08 .Z {
   border-radius: 50%;
-  background: rgba(66, 199, 25, 0.486);
+  background: rgba(69, 36, 153, 0.486);
   visibility: visible;
 }
-
-.spinXYZ {
-  animation: spinXYZ 15s 10s linear infinite;
-}
-
 @keyframes spinXYZ {
   100% {
     transform: rotate3d(1, -2, -1, 1turn);
