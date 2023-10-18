@@ -56,7 +56,71 @@ body {
         width: 100%;
         height: 100%;
         animation: spinXYZ 15s 10s linear infinite;
-        
+        .Skybox {
+            .Skybox {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                -webkit-perspective: 480;
+                perspective: 480;
+              }
+              
+              .Skybox-position {
+                position: relative;
+                cursor: pointer;
+                transform: translateZ(240px);
+                transform-style: preserve-3d;
+              }
+              
+              .Skybox-rotor-x,
+              .Skybox-rotor-y {
+                transform-style: preserve-3d;
+              }
+              
+              .Skybox-faces {
+                position: relative;
+                width: 0;
+                height: 0;
+                top: 240px;
+                margin: 0 auto;
+                transform-style: preserve-3d;
+              }
+              
+              .Skybox-face {
+                position: absolute;
+                display: block;
+                width: 480px;
+                height: 480px;
+                left: -240px;
+                top: -240px;
+                backface-visibility: hidden;
+              }
+              
+              .Skybox-face-left {
+                transform: translate3d(-239.5px, 0, 0) rotate3d(0, 1, 0, 90deg);
+              }
+              
+              .Skybox-face-back {
+                transform: translate3d(0, 0, -239.5px);
+              }
+              
+              .Skybox-face-right {
+                transform: translate3d(239.5px, 0, 0) rotate3d(0, 1, 0, -90deg);
+              }
+              
+              .Skybox-face-front {
+                transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, -239.5px);
+              }
+              
+              .Skybox-face-up {
+                transform: translate3d(0, -239.5px, 0) rotate3d(1, 0, 0, -90deg) rotate3d(0, 0, 1, -180deg);
+              }
+              
+              .Skybox-face-down {
+                transform: translate3d(0, 239.5px, 0) rotate3d(1, 0, 0, 90deg) rotate3d(0, 0, 1, 180deg);
+              }
+              
+        }
         .layer {
             position: absolute;
             top: 0;
@@ -65,6 +129,7 @@ body {
             width: 100%;
             height: 100%;
         
+
             &__back .cube, &__center .cube, &__front .cube {
                     position: absolute;
                     top: 0;
