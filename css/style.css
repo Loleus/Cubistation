@@ -55,7 +55,6 @@ body {
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
-  animation: spinXYZ 15s 10s linear infinite;
 }
 .port .layers .Skybox .Skybox {
   width: 100%;
@@ -88,13 +87,15 @@ body {
   left: -100vh;
   top: -100vh;
   backface-visibility: hidden;
-  background: url(./sky.jpg) 100%;
+  background: url(./stars.png) 100%;
+  background-size: 400% 300%;
 }
 .port .layers .Skybox .Skybox-face-left {
   transform: translate3d(-99.9vh, 0, 0) rotate3d(0, 1, 0, 90deg);
 }
 .port .layers .Skybox .Skybox-face-back {
   transform: translate3d(0, 0, -99.9vh);
+  background-position: 25% 0%;
 }
 .port .layers .Skybox .Skybox-face-right {
   transform: translate3d(99.9vh, 0, 0) rotate3d(0, 1, 0, -90deg);
