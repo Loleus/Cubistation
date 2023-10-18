@@ -55,20 +55,18 @@ body {
         transform-style: preserve-3d;
         width: 100%;
         height: 100%;
-        animation: spinXYZ 15s 10s linear infinite;
         .Skybox {
             .Skybox {
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
-                -webkit-perspective: 480;
                 perspective: 480;
               }
               
               .Skybox-position {
                 position: relative;
                 cursor: pointer;
-                transform: translateZ(240px);
+                transform: translateZ(0);
                 transform-style: preserve-3d;
               }
               
@@ -81,7 +79,7 @@ body {
                 position: relative;
                 width: 0;
                 height: 0;
-                top: 240px;
+                top: 20vw;
                 margin: 0 auto;
                 transform-style: preserve-3d;
               }
