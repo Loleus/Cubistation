@@ -152,40 +152,70 @@ body {
 .port .layers .layer__back .cube--06, .port .layers .layer__back .cube--07, .port .layers .layer__back .cube--08, .port .layers .layer__center .cube--06, .port .layers .layer__center .cube--07, .port .layers .layer__center .cube--08, .port .layers .layer__front .cube--06, .port .layers .layer__front .cube--07, .port .layers .layer__front .cube--08 {
   top: var(--thirdRow);
 }
-.port .layers .layer__back .cube .X, .port .layers .layer__back .cube .Y, .port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .X, .port .layers .layer__center .cube .Y, .port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .X, .port .layers .layer__front .cube .Y, .port .layers .layer__front .cube .Z {
+.port .layers .layer__back .cube .X,
+.port .layers .layer__back .cube .Y,
+.port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .X,
+.port .layers .layer__center .cube .Y,
+.port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .X,
+.port .layers .layer__front .cube .Y,
+.port .layers .layer__front .cube .Z {
   width: var(--cube);
   height: var(--cube);
   background: inherit;
   backface-visibility: visible;
-}
-.port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .Z {
-  transform: rotateZ(90deg);
-}
-.port .layers .layer__back .cube .X, .port .layers .layer__center .cube .X, .port .layers .layer__front .cube .X {
-  transform: translateY(var(--cubeMinus)) rotateX(90deg);
-}
-.port .layers .layer__back .cube .Y, .port .layers .layer__center .cube .Y, .port .layers .layer__front .cube .Y {
-  transform: translateY(var(--doubleCubeMinus)) rotateY(90deg);
-}
-.port .layers .layer__back .cube .X, .port .layers .layer__back .cube .Y, .port .layers .layer__back .cube .Z, .port .layers .layer__front .cube .X, .port .layers .layer__front .cube .Y, .port .layers .layer__front .cube .Z {
-  background: rgba(14, 70, 154, 0.363);
-}
-.port .layers .layer__front {
-  transform: translateZ(150px);
-  animation: spinFront 10s 2s ease-in infinite alternate;
-}
-.port .layers .layer__back {
-  transform: translateZ(-150px);
-  animation: spinBack 10s 1s ease-in infinite alternate;
+  visibility: visible;
+  border-radius: 50%;
+  border: 2px solid beige;
+  background: rgba(14, 70, 154, 0.5);
 }
 .port .layers .layer__center {
   transform: translateZ(0px);
   animation: spinCenter 5s linear infinite;
 }
-.port .layers .layer__center .cube--04 .X, .port .layers .layer__center .cube--04 .Y, .port .layers .layer__center .cube--04 .Z {
-  visibility: visible;
-  border-radius: 50%;
-  border: 2px dotted beige;
+.port .layers .layer__center .cube--04 :nth-child(1) {
+  transform: translateY(0) rotateY(0deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(2) {
+  transform: translateY(var(--cubeMinus)) rotateY(36deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(3) {
+  transform: translateY(var(--doubleCubeMinus)) rotateY(72deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(4) {
+  transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(5) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 2)) rotateY(144deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(6) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(7) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 3)) rotateX(36deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(8) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(9) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(10) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(11) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 5)) rotate(0deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(12) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 5 + var(--cubeMinus))) rotate(36deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(13) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 6)) rotate(72deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(14) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 6 + var(--cubeMinus))) rotate(108deg);
+}
+.port .layers .layer__center .cube--04 :nth-child(15) {
+  transform: translateY(calc(var(--doubleCubeMinus) * 7)) rotate(144deg);
 }
 @keyframes spinXYZ {
   100% {
@@ -323,4 +353,4 @@ body {
 .clip {
   -webkit-clip-path: circle(66%);
           clip-path: circle(66%);
-}
+}/*# sourceMappingURL=style.css.map */
