@@ -40,6 +40,7 @@ body {
   height: 100%;
   display: flex;
   perspective: 55rem;
+  overflow: hidden;
 }
 
 .port {
@@ -368,4 +369,4 @@ body {
 .clip {
   -webkit-clip-path: circle(66%);
           clip-path: circle(66%);
-}/*# sourceMappingURL=style.css.map */
+}
