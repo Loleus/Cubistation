@@ -50,6 +50,22 @@ body {
   margin: auto;
   transform: translateZ(-100px);
 }
+.port .clip {
+  box-sizing: content-box;
+  -webkit-clip-path: circle(49%);
+          clip-path: circle(49%);
+  width: var(--cube);
+  height: var(--cube);
+  background: inherit;
+  backface-visibility: visible;
+  visibility: visible;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(circle at 75% 15%, #fcf3a5 0%, #c5ba78 23%, #998a69 35%, #2e3a42 60%, black 90%);
+}
 .port .layers {
   position: relative;
   transform-style: preserve-3d;
@@ -166,7 +182,6 @@ body {
   visibility: visible;
   border-radius: 50%;
   border: 2px solid beige;
-  background: rgba(14, 70, 154, 0.5);
 }
 .port .layers .layer__center {
   transform: translateZ(0px);
@@ -203,19 +218,19 @@ body {
   transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
 }
 .port .layers .layer__center .cube--04 :nth-child(11) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 5)) rotate(0deg);
+  transform: translateY(calc(var(--doubleCubeMinus) * 5)) rotateY(0deg);
 }
 .port .layers .layer__center .cube--04 :nth-child(12) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 5 + var(--cubeMinus))) rotate(36deg);
+  transform: translateY(calc(var(--doubleCubeMinus) * 5 + var(--cubeMinus))) rotateY(36deg);
 }
 .port .layers .layer__center .cube--04 :nth-child(13) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 6)) rotate(72deg);
+  transform: translateY(calc(var(--doubleCubeMinus) * 6)) rotateY(72deg);
 }
 .port .layers .layer__center .cube--04 :nth-child(14) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 6 + var(--cubeMinus))) rotate(108deg);
+  transform: translateY(calc(var(--doubleCubeMinus) * 6 + var(--cubeMinus))) rotateY(108deg);
 }
 .port .layers .layer__center .cube--04 :nth-child(15) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 7)) rotate(144deg);
+  transform: translateY(calc(var(--doubleCubeMinus) * 7)) rotateY(144deg);
 }
 @keyframes spinXYZ {
   100% {

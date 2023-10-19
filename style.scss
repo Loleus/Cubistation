@@ -49,6 +49,27 @@ body {
     margin: auto;
     transform: translateZ(-100px);
 
+    .clip {
+        box-sizing: content-box;
+        clip-path: circle(49%);
+        width: var(--cube);
+        height: var(--cube);
+        background: inherit;
+        backface-visibility: visible;
+        visibility: visible;
+        border-radius: 50%;
+        // border: 1px solid beige;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: radial-gradient(circle at 75% 15%,
+                #fcf3a5 0%,
+                #c5ba78 23%,
+                #998a69 35%,
+                #2e3a42 60%,
+                black 90%);
+    }
 
     .layers {
         position: relative;
@@ -198,8 +219,8 @@ body {
                     visibility: visible;
                     border-radius: 50%;
                     border: 2px solid beige;
-                    background: rgba(14, 70, 154, 0.5);
                 }
+
             }
 
             &__center {
@@ -210,9 +231,11 @@ body {
 
                     &--04 {
 
-                        :nth-child(1)  {
+                        :nth-child(1) {
                             transform: translateY(0) rotateY(0deg);
-                        };
+                        }
+
+                        ;
 
                         :nth-child(2) {
                             transform: translateY(var(--cubeMinus)) rotateY(36deg);
@@ -220,10 +243,15 @@ body {
 
                         :nth-child(3) {
                             transform: translateY(var(--doubleCubeMinus)) rotateY(72deg);
-                        };
-                        :nth-child(4)  {
+                        }
+
+                        ;
+
+                        :nth-child(4) {
                             transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
-                        };
+                        }
+
+                        ;
 
                         :nth-child(5) {
                             transform: translateY(calc(var(--doubleCubeMinus) *2)) rotateY(144deg);
@@ -233,9 +261,11 @@ body {
                             transform: translateY(calc(var(--doubleCubeMinus) *2 + var(--cubeMinus))) rotateX(0deg);
                         }
 
-                        :nth-child(7)  {
+                        :nth-child(7) {
                             transform: translateY(calc(var(--doubleCubeMinus) *3)) rotateX(36deg);
-                        };
+                        }
+
+                        ;
 
                         :nth-child(8) {
                             transform: translateY(calc(var(--doubleCubeMinus) *3 + var(--cubeMinus))) rotateX(72deg);
@@ -250,25 +280,29 @@ body {
                         }
 
                         :nth-child(11) {
-                            transform: translateY(calc(var(--doubleCubeMinus) *5 )) rotate(0deg);
+                            transform: translateY(calc(var(--doubleCubeMinus) *5)) rotateY(0deg);
                         }
 
-                        :nth-child(12)  {
-                            transform: translateY(calc(var(--doubleCubeMinus) *5 + var(--cubeMinus))) rotate(36deg);
+                        :nth-child(12) {
+                            transform: translateY(calc(var(--doubleCubeMinus) *5 + var(--cubeMinus))) rotateY(36deg);
                         }
 
                         :nth-child(13) {
-                            transform: translateY(calc(var(--doubleCubeMinus) *6 )) rotate(72deg);
+                            transform: translateY(calc(var(--doubleCubeMinus) *6)) rotateY(72deg);
                         }
 
                         :nth-child(14) {
-                            transform: translateY(calc(var(--doubleCubeMinus) *6 + var(--cubeMinus))) rotate(108deg);
+                            transform: translateY(calc(var(--doubleCubeMinus) *6 + var(--cubeMinus))) rotateY(108deg);
                         }
-                        
+
                         :nth-child(15) {
-                            transform: translateY(calc(var(--doubleCubeMinus) *7 )) rotate(144deg);
-                        };
-                    };
+                            transform: translateY(calc(var(--doubleCubeMinus) *7)) rotateY(144deg);
+                        }
+
+                        ;
+                    }
+
+                    ;
                     // &--01, &--03, &--05, &--07 {
                     //     animation: spinCenter 3s 2s ease-out infinite;
                     //     background: none;
