@@ -182,7 +182,7 @@ body {
   backface-visibility: visible;
   visibility: visible;
   border-radius: 50%;
-  border: 1px solid beige;
+  border: 1px solid rgba(245, 245, 220, 0.5019607843);
 }
 .port .layers .layer__center {
   transform: translateZ(0px);
