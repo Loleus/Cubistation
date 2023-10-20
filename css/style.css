@@ -190,6 +190,8 @@ body {
   transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
 }
 .port .layers .layer__center .cube--sphere .cake {
+  display: block;
+  position: relative;
   width: var(--cube);
   height: var(--cube);
   background: inherit;
