@@ -34,7 +34,7 @@ body {
   width: 100%;
   height: 100%;
   background: url(./sky.jpg) repeat 0 0;
-  animation: bg-scrolling-reverse 24s linear infinite;
+  animation: bg-scrolling-reverse 32s linear infinite;
 }
 
 .root {
@@ -67,14 +67,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
-    background-image: radial-gradient(
-      circle at 75% 15%,
-      #fcf3a5 0%,
-      #b5ab74 23%,
-      #887b61 35%,
-      #42382e 60%,
-      black 90%
-    );
+    background-image: radial-gradient(circle at 75% 15%, #fcf3a5 0%, #b5ab74 23%, #887b61 35%, #42382e 60%, black 90%);
   }
 
   .layers {
@@ -82,9 +75,15 @@ body {
     transform-style: preserve-3d;
     width: 100%;
     height: 100%;
-    animation: spinXYZ 40s 0s linear infinite;
 
-    .Skybox {
+    .layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      width: 100%;
+      height: 100%;
+
       .Skybox {
         width: 100%;
         height: 100%;
@@ -109,6 +108,7 @@ body {
         top: 20vw;
         margin: 0 auto;
         transform-style: preserve-3d;
+        animation: spinXYZ 40s 0s linear infinite;
       }
 
       .Skybox-face {
@@ -124,7 +124,7 @@ body {
         background-attachment: fixed;
         opacity: 0.67;
       }
-      
+
       .Skybox-face-left {
         transform: translate3d(-100vh, 0, 0) rotate3d(0, 1, 0, 90deg);
         background-position: 0% 50%;
@@ -154,15 +154,6 @@ body {
         transform: translate3d(0, 100vh, 0) rotate3d(1, 0, 0, 90deg) rotate3d(0, 0, 1, 0deg);
         background-position: 33.3% 100%;
       }
-    }
-
-    .layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform-style: preserve-3d;
-      width: 100%;
-      height: 100%;
 
       &__center {
         transform: translateZ(0px);
@@ -178,7 +169,6 @@ body {
           background: none;
 
           &--sphere {
-
             left: var(--secondRow);
             top: var(--secondRow);
 
@@ -203,11 +193,11 @@ body {
             }
 
             :nth-child(6) {
-              transform: translateY( calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
             }
 
             :nth-child(7) {
-              transform: translateY(calc(var(--doubleCubeMinus) * 3))rotateX(36deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 3)) rotateX(36deg);
             }
 
             :nth-child(8) {
@@ -236,23 +226,23 @@ body {
       }
     }
   }
+}
 
-  @keyframes bg-scrolling-reverse {
-    100% {
-      background-position: $bg-width $bg-height;
-    }
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
   }
+}
 
-  @keyframes spinXYZ {
-    100% {
-      transform: rotate3d(1, -2, -1, 1turn);
-    }
+@keyframes spinXYZ {
+  100% {
+    transform: rotate3d(1, -2, -1, 1turn);
   }
+}
 
-  @keyframes spinCenter {
-    100% {
-      transform: translateZ(0px) rotateZ(360deg);
-    }
+@keyframes spinCenter {
+  100% {
+    transform: translateZ(0px) rotateZ(360deg);
   }
 }
 
