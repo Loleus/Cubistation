@@ -119,12 +119,12 @@ body {
         left: -100vh;
         top: -100vh;
         backface-visibility: hidden;
-        background: url(./stars.png) 100%;
+        background: url(./stars.jpg) 100%;
         background-size: 400% 300%;
         background-attachment: fixed;
-        opacity: 0.5;
+        opacity: 0.67;
       }
-
+      
       .Skybox-face-left {
         transform: translate3d(-100vh, 0, 0) rotate3d(0, 1, 0, 90deg);
         background-position: 0% 50%;
