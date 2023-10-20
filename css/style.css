@@ -185,7 +185,6 @@ body {
 }
 .port .layers .layer__center .cube--04 :nth-child(8) {
   transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
-  visibility: hidden;
 }
 .port .layers .layer__center .cube--04 :nth-child(9) {
   transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
