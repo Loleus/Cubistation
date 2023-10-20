@@ -142,11 +142,11 @@ body {
   transform: translate3d(0, 100vh, 0) rotate3d(1, 0, 0, 90deg) rotate3d(0, 0, 1, 0deg);
   background-position: 33.3% 100%;
 }
-.port .layers .layer__center {
+.port .layers .layer__sphere {
   transform: translateZ(0px);
   animation: animateSphere 24s linear infinite;
 }
-.port .layers .layer__center .cube {
+.port .layers .layer__sphere .cube {
   position: absolute;
   top: 0;
   left: 0;
@@ -154,42 +154,40 @@ body {
   width: var(--cube);
   height: var(--cube);
   background: none;
-}
-.port .layers .layer__center .cube--sphere {
   left: var(--secondRow);
   top: var(--secondRow);
 }
-.port .layers .layer__center .cube--sphere :nth-child(1) {
+.port .layers .layer__sphere .cube :nth-child(1) {
   transform: translateY(0) rotateY(0deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(2) {
+.port .layers .layer__sphere .cube :nth-child(2) {
   transform: translateY(var(--cubeMinus)) rotateY(36deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(3) {
+.port .layers .layer__sphere .cube :nth-child(3) {
   transform: translateY(var(--doubleCubeMinus)) rotateY(72deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(4) {
+.port .layers .layer__sphere .cube :nth-child(4) {
   transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(5) {
+.port .layers .layer__sphere .cube :nth-child(5) {
   transform: translateY(calc(var(--doubleCubeMinus) * 2)) rotateY(144deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(6) {
+.port .layers .layer__sphere .cube :nth-child(6) {
   transform: translateY(calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(7) {
+.port .layers .layer__sphere .cube :nth-child(7) {
   transform: translateY(calc(var(--doubleCubeMinus) * 3)) rotateX(36deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(8) {
+.port .layers .layer__sphere .cube :nth-child(8) {
   transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(9) {
+.port .layers .layer__sphere .cube :nth-child(9) {
   transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
 }
-.port .layers .layer__center .cube--sphere :nth-child(10) {
+.port .layers .layer__sphere .cube :nth-child(10) {
   transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
 }
-.port .layers .layer__center .cube--sphere .cake {
+.port .layers .layer__sphere .cube .cake {
   display: block;
   position: relative;
   width: var(--cube);
