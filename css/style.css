@@ -55,8 +55,8 @@ body {
 }
 .port .clip {
   box-sizing: content-box;
-  -webkit-clip-path: circle(51%);
-          clip-path: circle(51%);
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
   width: var(--cube);
   height: var(--cube);
   background: inherit;
@@ -67,7 +67,7 @@ body {
   box-shadow: 0 0 0px 1px beige;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.7);
   background-image: radial-gradient(circle at 75% 15%, #fcf3a5 0%, #b5ab74 23%, #887b61 35%, #42382e 60%, black 90%);
 }
 .port .layers {
@@ -145,7 +145,11 @@ body {
   width: 100%;
   height: 100%;
 }
-.port .layers .layer__back .cube, .port .layers .layer__center .cube, .port .layers .layer__front .cube {
+.port .layers .layer__center {
+  transform: translateZ(0px);
+  animation: animateSphere 24s linear infinite;
+}
+.port .layers .layer__center .cube {
   position: absolute;
   top: 0;
   left: 0;
@@ -154,42 +158,9 @@ body {
   height: var(--cube);
   background: none;
 }
-.port .layers .layer__back .cube--00, .port .layers .layer__back .cube--03, .port .layers .layer__back .cube--06, .port .layers .layer__center .cube--00, .port .layers .layer__center .cube--03, .port .layers .layer__center .cube--06, .port .layers .layer__front .cube--00, .port .layers .layer__front .cube--03, .port .layers .layer__front .cube--06 {
-  left: 0;
-}
-.port .layers .layer__back .cube--01, .port .layers .layer__back .cube--04, .port .layers .layer__back .cube--07, .port .layers .layer__center .cube--01, .port .layers .layer__center .cube--04, .port .layers .layer__center .cube--07, .port .layers .layer__front .cube--01, .port .layers .layer__front .cube--04, .port .layers .layer__front .cube--07 {
+.port .layers .layer__center .cube--04 {
   left: var(--secondRow);
-}
-.port .layers .layer__back .cube--02, .port .layers .layer__back .cube--05, .port .layers .layer__back .cube--08, .port .layers .layer__center .cube--02, .port .layers .layer__center .cube--05, .port .layers .layer__center .cube--08, .port .layers .layer__front .cube--02, .port .layers .layer__front .cube--05, .port .layers .layer__front .cube--08 {
-  left: var(--thirdRow);
-}
-.port .layers .layer__back .cube--00, .port .layers .layer__back .cube--01, .port .layers .layer__back .cube--02, .port .layers .layer__center .cube--00, .port .layers .layer__center .cube--01, .port .layers .layer__center .cube--02, .port .layers .layer__front .cube--00, .port .layers .layer__front .cube--01, .port .layers .layer__front .cube--02 {
-  top: 0;
-}
-.port .layers .layer__back .cube--03, .port .layers .layer__back .cube--04, .port .layers .layer__back .cube--05, .port .layers .layer__center .cube--03, .port .layers .layer__center .cube--04, .port .layers .layer__center .cube--05, .port .layers .layer__front .cube--03, .port .layers .layer__front .cube--04, .port .layers .layer__front .cube--05 {
   top: var(--secondRow);
-}
-.port .layers .layer__back .cube--06, .port .layers .layer__back .cube--07, .port .layers .layer__back .cube--08, .port .layers .layer__center .cube--06, .port .layers .layer__center .cube--07, .port .layers .layer__center .cube--08, .port .layers .layer__front .cube--06, .port .layers .layer__front .cube--07, .port .layers .layer__front .cube--08 {
-  top: var(--thirdRow);
-}
-.port .layers .layer__back .cube .X,
-.port .layers .layer__back .cube .Y,
-.port .layers .layer__back .cube .Z, .port .layers .layer__center .cube .X,
-.port .layers .layer__center .cube .Y,
-.port .layers .layer__center .cube .Z, .port .layers .layer__front .cube .X,
-.port .layers .layer__front .cube .Y,
-.port .layers .layer__front .cube .Z {
-  width: var(--cube);
-  height: var(--cube);
-  background: inherit;
-  backface-visibility: visible;
-  visibility: visible;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 245, 220, 0.5019607843);
-}
-.port .layers .layer__center {
-  transform: translateZ(0px);
-  animation: spinCenter 5s linear infinite;
 }
 .port .layers .layer__center .cube--04 :nth-child(1) {
   transform: translateY(0) rotateY(0deg);
@@ -214,6 +185,7 @@ body {
 }
 .port .layers .layer__center .cube--04 :nth-child(8) {
   transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
+  visibility: hidden;
 }
 .port .layers .layer__center .cube--04 :nth-child(9) {
   transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
@@ -221,20 +193,14 @@ body {
 .port .layers .layer__center .cube--04 :nth-child(10) {
   transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
 }
-.port .layers .layer__center .cube--04 :nth-child(11) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 5)) rotateY(0deg);
-}
-.port .layers .layer__center .cube--04 :nth-child(12) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 5 + var(--cubeMinus))) rotateY(36deg);
-}
-.port .layers .layer__center .cube--04 :nth-child(13) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 6)) rotateY(72deg);
-}
-.port .layers .layer__center .cube--04 :nth-child(14) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 6 + var(--cubeMinus))) rotateY(108deg);
-}
-.port .layers .layer__center .cube--04 :nth-child(15) {
-  transform: translateY(calc(var(--doubleCubeMinus) * 7)) rotateY(144deg);
+.port .layers .layer__center .cube--04 div {
+  width: var(--cube);
+  height: var(--cube);
+  background: inherit;
+  backface-visibility: visible;
+  visibility: visible;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 245, 220, 0.5019607843);
 }
 @keyframes bg-scrolling-reverse {
   100% {
