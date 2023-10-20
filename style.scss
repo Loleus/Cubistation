@@ -13,14 +13,12 @@ $bg-height: 598px;
   --cubeMinus: -10vw;
   --doubleCubeMinus: -20vw;
   --secondRow: 15vw;
-  --thirdRow: 30vw;
   --portSize: 40vw;
 
   @media screen and (orientation: portrait) {
     --cube: 10vh;
     --cubeMinus: -10vh;
     --secondRow: 15vh;
-    --thirdRow: 30vh;
     --doubleCubeMinus: -20vh;
     --portSize: 40vh;
   }
@@ -128,34 +126,32 @@ body {
       }
 
       .Skybox-face-left {
-        transform: translate3d(-99.9vh, 0, 0) rotate3d(0, 1, 0, 90deg);
+        transform: translate3d(-100vh, 0, 0) rotate3d(0, 1, 0, 90deg);
         background-position: 0% 50%;
       }
 
       .Skybox-face-back {
-        transform: translate3d(0, 0, -99.9vh);
+        transform: translate3d(0, 0, -100vh);
         background-position: 33.33% 50%;
       }
 
       .Skybox-face-right {
-        transform: translate3d(99.9vh, 0, 0) rotate3d(0, 1, 0, -90deg);
+        transform: translate3d(100vh, 0, 0) rotate3d(0, 1, 0, -90deg);
         background-position: 66.7% 50%;
       }
 
       .Skybox-face-front {
-        transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, -99.9vh);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, -100vh);
         background-position: 100% 50%;
       }
 
       .Skybox-face-up {
-        transform: translate3d(0, -99.9vh, 0) rotate3d(1, 0, 0, -90deg)
-          rotate3d(0, 0, 1, 0deg);
+        transform: translate3d(0, -100vh, 0) rotate3d(1, 0, 0, -90deg) rotate3d(0, 0, 1, 0deg);
         background-position: 33.3% 0%;
       }
 
       .Skybox-face-down {
-        transform: translate3d(0, 99.9vh, 0) rotate3d(1, 0, 0, 90deg)
-          rotate3d(0, 0, 1, 0deg);
+        transform: translate3d(0, 100vh, 0) rotate3d(1, 0, 0, 90deg) rotate3d(0, 0, 1, 0deg);
         background-position: 33.3% 100%;
       }
     }
@@ -180,9 +176,12 @@ body {
           width: var(--cube);
           height: var(--cube);
           background: none;
-          &--04 {
+
+          &--sphere {
+
             left: var(--secondRow);
             top: var(--secondRow);
+
             :nth-child(1) {
               transform: translateY(0) rotateY(0deg);
             }
@@ -196,48 +195,34 @@ body {
             }
 
             :nth-child(4) {
-              transform: translateY(
-                  calc(var(--doubleCubeMinus) + var(--cubeMinus))
-                )
-                rotateY(108deg);
+              transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
             }
 
             :nth-child(5) {
-              transform: translateY(calc(var(--doubleCubeMinus) * 2))
-                rotateY(144deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 2)) rotateY(144deg);
             }
 
             :nth-child(6) {
-              transform: translateY(
-                  calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))
-                )
-                rotateX(0deg);
+              transform: translateY( calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
             }
 
             :nth-child(7) {
-              transform: translateY(calc(var(--doubleCubeMinus) * 3))
-                rotateX(36deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 3))rotateX(36deg);
             }
 
             :nth-child(8) {
-              transform: translateY(
-                  calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))
-                )
-                rotateX(72deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
             }
 
             :nth-child(9) {
-              transform: translateY(calc(var(--doubleCubeMinus) * 4))
-                rotateX(108deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
             }
 
             :nth-child(10) {
-              transform: translateY(
-                  calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))
-                )
-                rotateX(144deg);
+              transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
             }
-            div {
+
+            .cake {
               width: var(--cube);
               height: var(--cube);
               background: inherit;
