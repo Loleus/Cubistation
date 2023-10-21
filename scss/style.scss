@@ -55,7 +55,7 @@ body {
 
   .clip {
     box-sizing: content-box;
-    clip-path: circle(49.8%);
+    // clip-path: circle(49.8%);
     width: var(--cube);
     height: var(--cube);
     background: inherit;
@@ -172,52 +172,52 @@ body {
 
           :nth-child(1) {
             transform: translateY(0) rotateY(0deg);
-            animation: borderPulse 0 5s linear infinite
+            // animation: borderPulse 0 5s linear infinite
           }
 
           :nth-child(2) {
             transform: translateY(var(--cubeMinus)) rotateY(36deg);
-            animation: borderPulse 1s 5s linear infinite
+            // animation: borderPulse 1s 5s linear infinite
           }
 
           :nth-child(3) {
             transform: translateY(var(--doubleCubeMinus)) rotateY(72deg);
-            animation: borderPulse 2s 5s linear infinite
+            // animation: borderPulse 2s 5s linear infinite
           }
 
           :nth-child(4) {
             transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
-            animation: borderPulse 3s 5s linear infinite
+            // animation: borderPulse 3s 5s linear infinite
           }
 
           :nth-child(5) {
             transform: translateY(calc(var(--doubleCubeMinus) * 2)) rotateY(144deg);
-            animation: borderPulse 4s 5s linear infinite
+            // animation: borderPulse 4s 5s linear infinite
           }
 
           :nth-child(6) {
             transform: translateY(calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
-            animation: borderPulse 5s 5s linear infinite
+            // animation: borderPulse 5s 5s linear infinite
           }
 
           :nth-child(7) {
             transform: translateY(calc(var(--doubleCubeMinus) * 3)) rotateX(36deg);
-            animation: borderPulse 6s 5s linear infinite
+            // animation: borderPulse 6s 5s linear infinite
           }
 
           :nth-child(8) {
             transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
-            animation: borderPulse 7s 5s linear infinite
+            // animation: borderPulse 7s 5s linear infinite
           }
 
           :nth-child(9) {
             transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
-            animation: borderPulse 8s 5s linear infinite
+            // animation: borderPulse 8s 5s linear infinite
           }
 
           :nth-child(10) {
             transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
-            animation: borderPulse 9s 5s linear infinite
+            // animation: borderPulse 9s 5s linear infinite
           }
 
           .cake {
