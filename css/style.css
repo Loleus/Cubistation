@@ -32,7 +32,7 @@ body {
   width: 100%;
   height: 100%;
   background: url(./sky.jpg) repeat 0 0;
-  animation: bg-scrolling-reverse 40s linear infinite;
+  animation: bg-scrolling-reverse 5s linear infinite;
 }
 
 .root {
@@ -101,7 +101,7 @@ body {
   top: 20vw;
   margin: 0 auto;
   transform-style: preserve-3d;
-  animation: spinXYZ 60s 0s linear infinite;
+  animation: animateSphere 48s linear infinite reverse;
 }
 .port .layers .layer .Skybox-face {
   position: absolute;
@@ -114,7 +114,7 @@ body {
   background: url(./stars.jpg) 100%;
   background-size: 400% 300%;
   background-attachment: fixed;
-  opacity: 0.67;
+  opacity: 0.77;
 }
 .port .layers .layer .Skybox-face-left {
   transform: translate3d(-100vh, 0, 0) rotate3d(0, 1, 0, 90deg);
@@ -142,7 +142,7 @@ body {
 }
 .port .layers .layer__sphere {
   transform: translateZ(0px);
-  animation: animateSphere 24s linear infinite;
+  animation: animateSphere 48s linear infinite;
 }
 .port .layers .layer__sphere .cube {
   position: absolute;
