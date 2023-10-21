@@ -55,7 +55,7 @@ body {
 
   .clip {
     box-sizing: content-box;
-    clip-path: circle(49.6%);
+    clip-path: circle(49.8%);
     width: var(--cube);
     height: var(--cube);
     background: inherit;
@@ -63,11 +63,11 @@ body {
     visibility: visible;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 0px 1px beige;
+    border: 1px solid #63fcffb3;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    background-image: radial-gradient(circle at 75% 15%, #fcf3a5 0%, #b5ab74 23%, #887b61 35%, #42382e 60%, black 90%);
+    background-image: radial-gradient(circle at 65% 15%, #fcf3a5 0%, #b5ab74 23%, #887b61 35%, #42382e 60%, black 90%);
   }
 
   .layers {
@@ -229,6 +229,7 @@ body {
             backface-visibility: visible;
             visibility: visible;
             border-radius: 50%;
+            border: 1px solid #63fcffb3;
           }
         }
       }
@@ -255,15 +256,15 @@ body {
 }
 @keyframes borderPulse {
   0% {
-    border: 1px solid #63fcff;
+    border: 1px solid #63fcffb3;
   }
 
   50% {
-    border: 1px solid #ff0000;
+    border: 1px solid #ff0000b3;
   }
 
   100% {
-    border: 1px solid #63fcff;
+    border: 1px solid #63fcffb3;
   }
   
 }
