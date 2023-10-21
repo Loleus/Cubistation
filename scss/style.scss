@@ -34,7 +34,7 @@ body {
   width: 100%;
   height: 100%;
   background: url(./sky.jpg) repeat 0 0;
-  animation: bg-scrolling-reverse 32s linear infinite;
+  animation: bg-scrolling-reverse 40s linear infinite;
 }
 
 .root {
@@ -55,7 +55,7 @@ body {
 
   .clip {
     box-sizing: content-box;
-    clip-path: circle(50%);
+    clip-path: circle(49.6%);
     width: var(--cube);
     height: var(--cube);
     background: inherit;
@@ -66,7 +66,7 @@ body {
     box-shadow: 0 0 0px 1px beige;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -50%) scale(1);
     background-image: radial-gradient(circle at 75% 15%, #fcf3a5 0%, #b5ab74 23%, #887b61 35%, #42382e 60%, black 90%);
   }
 
@@ -108,7 +108,7 @@ body {
         top: 20vw;
         margin: 0 auto;
         transform-style: preserve-3d;
-        animation: spinXYZ 40s 0s linear infinite;
+        animation: spinXYZ 60s 0s linear infinite;
       }
 
       .Skybox-face {
@@ -172,42 +172,52 @@ body {
 
           :nth-child(1) {
             transform: translateY(0) rotateY(0deg);
+            animation: borderPulse 0 5s linear infinite
           }
 
           :nth-child(2) {
             transform: translateY(var(--cubeMinus)) rotateY(36deg);
+            animation: borderPulse 1s 5s linear infinite
           }
 
           :nth-child(3) {
             transform: translateY(var(--doubleCubeMinus)) rotateY(72deg);
+            animation: borderPulse 2s 5s linear infinite
           }
 
           :nth-child(4) {
             transform: translateY(calc(var(--doubleCubeMinus) + var(--cubeMinus))) rotateY(108deg);
+            animation: borderPulse 3s 5s linear infinite
           }
 
           :nth-child(5) {
             transform: translateY(calc(var(--doubleCubeMinus) * 2)) rotateY(144deg);
+            animation: borderPulse 4s 5s linear infinite
           }
 
           :nth-child(6) {
             transform: translateY(calc(var(--doubleCubeMinus) * 2 + var(--cubeMinus))) rotateX(0deg);
+            animation: borderPulse 5s 5s linear infinite
           }
 
           :nth-child(7) {
             transform: translateY(calc(var(--doubleCubeMinus) * 3)) rotateX(36deg);
+            animation: borderPulse 6s 5s linear infinite
           }
 
           :nth-child(8) {
             transform: translateY(calc(var(--doubleCubeMinus) * 3 + var(--cubeMinus))) rotateX(72deg);
+            animation: borderPulse 7s 5s linear infinite
           }
 
           :nth-child(9) {
             transform: translateY(calc(var(--doubleCubeMinus) * 4)) rotateX(108deg);
+            animation: borderPulse 8s 5s linear infinite
           }
 
           :nth-child(10) {
             transform: translateY(calc(var(--doubleCubeMinus) * 4 + var(--cubeMinus))) rotateX(144deg);
+            animation: borderPulse 9s 5s linear infinite
           }
 
           .cake {
@@ -219,7 +229,6 @@ body {
             backface-visibility: visible;
             visibility: visible;
             border-radius: 50%;
-            border: 1px solid #f5f5dc80;
           }
         }
       }
@@ -243,6 +252,20 @@ body {
   100% {
     transform: translateZ(0px) rotateZ(360deg);
   }
+}
+@keyframes borderPulse {
+  0% {
+    border: 1px solid #63fcff;
+  }
+
+  50% {
+    border: 1px solid #ff0000;
+  }
+
+  100% {
+    border: 1px solid #63fcff;
+  }
+  
 }
 
 @keyframes animateSphere {
